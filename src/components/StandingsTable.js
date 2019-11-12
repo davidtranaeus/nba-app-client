@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class Table extends Component {
+class StandingsTable extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -31,4 +31,4 @@ class Table extends Component {
   }
 }
 
-export default Table;
+export default StandingsTable;
