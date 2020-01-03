@@ -7,13 +7,14 @@ function ConferenceTable(props) {
   const tableData = props.records.map((record, index) => {
     const { logo, nickname, rank, win, loss } = record;
     return (
-      <tr key={index}>
-        <td>{rank}</td>
-        <td><img src={logo} alt={nickname} width="30px"/></td>
-        <td>{nickname}</td>
-        <td>{win}</td>
-        <td>{loss}</td>
-      </tr>
+      <Record 
+        key={index}
+        logo={logo}
+        nickname={nickname}
+        rank={rank}
+        win={win}
+        loss={loss}
+      />
     )
   })
 
