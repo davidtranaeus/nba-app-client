@@ -5,7 +5,7 @@ function ConferenceTable(props) {
   props.records.sort((a, b) => (parseInt(a.rank) > parseInt(b.rank)) ? 1 : -1);
 
   const tableData = props.records.map((record, index) => {
-    const { logo, nickname, rank, win, loss, winPercentage,
+    const { logo, nickname, rank, win, loss, winPercentage, gamesBehind,
       streak, isWinStreak, lastTenWin, lastTenLoss } = record;
 
     return (
@@ -17,6 +17,7 @@ function ConferenceTable(props) {
         win={win}
         loss={loss}
         winPercentage={winPercentage}
+        gamesBehind={gamesBehind}
         streak={streak}
         isWinStreak={isWinStreak}
         lastTenWin={lastTenWin}
@@ -35,6 +36,7 @@ function ConferenceTable(props) {
             <th>W</th>
             <th>L</th>
             <th>%</th>
+            <th>GB</th>
             <th>Strk</th>
             <th>L10</th>
           </tr>

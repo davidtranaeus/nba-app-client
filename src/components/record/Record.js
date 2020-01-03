@@ -2,7 +2,7 @@ import React from 'react';
 
 function Record(props) {
   const { index, logo, nickname, rank, win, loss, winPercentage,
-    streak, isWinStreak, lastTenWin, lastTenLoss } = props;
+    gamesBehind, streak, isWinStreak, lastTenWin, lastTenLoss } = props;
 
   return (    
     <tr key={index}>
@@ -11,7 +11,8 @@ function Record(props) {
         <td>{nickname}</td>
         <td>{win}</td>
         <td>{loss}</td>
-        <td>{winPercentage}</td> 
+        <td>{winPercentage}</td>
+        <td>{gamesBehind}</td>
         <td>{`${isWinStreak === '1' ? 'W' : 'L'}${streak}`}</td>
         <td>{`${lastTenWin}-${lastTenLoss}`}</td>
     </tr>
