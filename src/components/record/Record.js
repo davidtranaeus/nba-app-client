@@ -1,7 +1,8 @@
 import React from 'react';
 
 function Record(props) {
-  const { index, logo, nickname, rank, win, loss } = props;
+  const { index, logo, nickname, rank, win,
+    loss, winPercentage, streak, isWinStreak } = props;
 
   return (    
     <tr key={index}>
@@ -10,7 +11,9 @@ function Record(props) {
         <td>{nickname}</td>
         <td>{win}</td>
         <td>{loss}</td>
-      </tr>
+        <td>{winPercentage}</td> 
+        <td>{`${isWinStreak === '1' ? 'W' : 'L'}${streak}`}</td> 
+    </tr>
   )
 }
 

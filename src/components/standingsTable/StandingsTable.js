@@ -21,7 +21,7 @@ class StandingsTable extends Component {
 
   render() {
     return (
-      <ConferenceTable records={this.state.teamsWest}/>
+      <ConferenceTable records={this.state.teamsEast}/>
     )
   }
 }
