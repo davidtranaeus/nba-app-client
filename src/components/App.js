@@ -1,5 +1,5 @@
 import React from 'react';
-import StandingsTable from './standingsTable/StandingsTable';
+import StandingsTable from './StandingsTable';
 import './App.css';
 
 function App() {

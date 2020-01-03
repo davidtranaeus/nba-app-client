@@ -1,12 +1,12 @@
 import React from 'react';
-import Record from '../record/Record';
+import Record from './Record';
 
 function ConferenceTable(props) {
   props.records.sort((a, b) => (parseInt(a.rank) > parseInt(b.rank)) ? 1 : -1);
 
   const tableData = props.records.map((record, index) => {
-    const { logo, nickname, rank, win, loss, winPercentage, gamesBehind,
-      streak, isWinStreak, lastTenWin, lastTenLoss } = record;
+    const { logo, nickname, rank, win, loss, winPercentage, 
+      gamesBehind, streak, isWinStreak, lastTenWin, lastTenLoss } = record;
 
     return (
       <Record 
@@ -27,7 +27,7 @@ function ConferenceTable(props) {
   })
 
   return (
-      <table cellPadding="6">
+      <table cellPadding="6" className={props.className}>
         <thead>
           <tr>
             <th>Ranking</th>
