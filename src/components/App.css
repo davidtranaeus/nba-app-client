@@ -13,6 +13,10 @@
   margin-bottom: 20px;
 }
 
-.underlined {
+.selected {
   border-bottom: 1px solid;
+}
+
+.unselected {
+  color: gray;
 }

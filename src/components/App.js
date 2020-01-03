@@ -38,12 +38,12 @@ class App extends Component {
         <div className="selector-container">
           <div 
             onClick={() => this.changeConference(WEST_CONF)}
-            className={this.state.selectedConference === WEST_CONF ? "underlined" : ""}
+            className={this.state.selectedConference === WEST_CONF ? "selected" : "unselected"}
             >Western conference
           </div>
           <div 
             onClick={() => this.changeConference(EAST_CONF)}
-            className={this.state.selectedConference === EAST_CONF ? "underlined" : ""}
+            className={this.state.selectedConference === EAST_CONF ? "selected" : "unselected"}
             >Eastern conference
           </div>
         </div>
