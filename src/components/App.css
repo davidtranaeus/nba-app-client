@@ -1,4 +1,18 @@
-.App {
+.app {
   width: 500px;
   margin: 20px auto;
+}
+
+.conference-table {
+  margin: 0 auto;
+}
+
+.selector-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.underlined {
+  border-bottom: 1px solid;
 }
