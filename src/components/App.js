@@ -34,7 +34,7 @@ class App extends Component {
     const records = this.state.selectedConference === WEST_CONF ? this.state.teamsWest : this.state.teamsEast;
 
     return (
-      <div className="app">
+      <div>
         <div className="selector-container">
           <div 
             onClick={() => this.changeConference(WEST_CONF)}
@@ -47,7 +47,7 @@ class App extends Component {
             >Eastern conference
           </div>
         </div>
-        <ConferenceTable records={records} className="conference-table" />
+        <ConferenceTable records={records} />
       </div>
     )
   }

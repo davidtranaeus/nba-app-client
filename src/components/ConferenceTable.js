@@ -27,7 +27,7 @@ function ConferenceTable(props) {
   })
 
   return (
-      <table cellPadding="6" className={props.className}>
+      <table cellPadding="6">
         <thead>
           <tr>
             <th>Ranking</th>
