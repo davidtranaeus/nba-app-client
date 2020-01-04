@@ -1,14 +1,14 @@
 import React from 'react';
 
 function Record(props) {
-  const { index, logo, nickname, rank, win, loss, winPercentage,
+  const { index, logo, nickname, shortName, rank, win, loss, winPercentage,
     gamesBehind, streak, isWinStreak, lastTenWin, lastTenLoss } = props;
 
   return (    
     <tr key={index}>
       <td>{rank}</td>
       <td><img src={logo} alt={nickname} width="30px"/></td>
-      <td>{nickname}</td>
+      <td>{window.innerWidth > 640 ? nickname : shortName}</td>
       <td align="center">{win}</td>
       <td align="center">{loss}</td>
       <td align="center">{winPercentage}</td>
