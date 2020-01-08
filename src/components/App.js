@@ -23,7 +23,11 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const teams = await axios.get('http://localhost:3001/teams')
+    const url = (process.env.NODE_ENV === 'development') 
+      ? 'http://localhost:3001/teams'
+      : 'http://ec2-13-53-135-10.eu-north-1.compute.amazonaws.com/teams';
+
+    const teams = await axios.get(url)
     this.setState({
       teamsWest: teams.data.filter(team => team.conference === 'west'),
       teamsEast: teams.data.filter(team => team.conference === 'east'),
