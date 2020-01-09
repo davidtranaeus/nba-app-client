@@ -1,15 +1,16 @@
 import React from 'react';
-import Record from './Record';
+import './App.css';
+import Record from './Record'
 
-function ConferenceTable(props) {
-  props.records.sort((a, b) => (parseInt(a.rank) > parseInt(b.rank)) ? 1 : -1);
+const Standings = ({ teams }) => {
+  teams.sort((a, b) => (parseInt(a.rank) > parseInt(b.rank)) ? 1 : -1);
 
-  const tableData = props.records.map((record, index) => {
+  const tableData = teams.map((record, index) => { // TODO: Denna delen är onödig
     const { logo, nickname, shortName, rank, win, loss, winPercentage, 
       gamesBehind, streak, isWinStreak, lastTenWin, lastTenLoss } = record;
 
     return (
-      <Record 
+      <Record
         key={index}
         logo={logo}
         nickname={nickname}
@@ -32,7 +33,6 @@ function ConferenceTable(props) {
         <thead>
           <tr>
             <th>{window.innerWidth > 640 ? "Ranking" : ""}</th>
-            {/* <th>{"Ranking"}</th> */}
             <th></th>
             <th></th>
             <th>W</th>
@@ -50,4 +50,4 @@ function ConferenceTable(props) {
   )
 }
 
-export default ConferenceTable;
+export default Standings;
