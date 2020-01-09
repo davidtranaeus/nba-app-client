@@ -1,10 +1,14 @@
 import axios from 'axios';
+import ReactGA from 'react-ga';
 import React, { Component } from 'react';
 import ConferenceTable from './ConferenceTable';
 import './App.css';
 
 const WEST_CONF = "WESTERN_CONFERENCE"
 const EAST_CONF = "EASTERN_CONFERENCE"
+
+ReactGA.initialize('UA-155888282-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 class App extends Component {
   constructor(props) {
@@ -17,6 +21,12 @@ class App extends Component {
   }
 
   changeConference(conference) {
+    ReactGA.event({
+      category: 'User',
+      action: 'Selected Conference',
+      label: conference
+    });
+
     this.setState({
       selectedConference: conference,
     })
