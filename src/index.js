@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+
 import './index.css';
 import App from './components/App';
 import combinedReducer from './reducers';
-import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
 import { fetchData } from './actions.js';
-import thunkMiddleware from 'redux-thunk'
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(
