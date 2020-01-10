@@ -1,32 +1,9 @@
 import React from 'react';
-import './App.css';
 import Record from './Record'
 
 const Standings = ({ teams }) => {
+  // Sort on ranking
   teams.sort((a, b) => (parseInt(a.rank) > parseInt(b.rank)) ? 1 : -1);
-
-  const tableData = teams.map((record, index) => { // TODO: Denna delen är onödig
-    const { logo, nickname, shortName, rank, win, loss, winPercentage, 
-      gamesBehind, streak, isWinStreak, lastTenWin, lastTenLoss } = record;
-
-    return (
-      <Record
-        key={index}
-        logo={logo}
-        nickname={nickname}
-        shortName={shortName}
-        rank={rank}
-        win={win}
-        loss={loss}
-        winPercentage={winPercentage}
-        gamesBehind={gamesBehind}
-        streak={streak}
-        isWinStreak={isWinStreak}
-        lastTenWin={lastTenWin}
-        lastTenLoss={lastTenLoss}
-      />
-    )
-  })
 
   return (
       <table cellPadding="6">
@@ -44,7 +21,7 @@ const Standings = ({ teams }) => {
           </tr>
         </thead>
         <tbody>
-          {tableData}
+          {teams.map((record, index) => <Record data={record} key={index}/>)}
         </tbody>
       </table>
   )
