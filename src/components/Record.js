@@ -5,7 +5,7 @@ const Record = props => {
     <tr>
       <td>{props.data.rank}</td>
       <td><img src={props.data.logo} alt={props.data.nickname} width="30px"/></td>
-      <td>{window.innerWidth > 640 ? props.datanickname : props.data.shortName}</td>
+      <td>{window.innerWidth > 640 ? props.data.nickname : props.data.shortName}</td>
       <td align="center">{props.data.win}</td>
       <td align="center">{props.data.loss}</td>
       <td align="center">{props.data.winPercentage}</td>
