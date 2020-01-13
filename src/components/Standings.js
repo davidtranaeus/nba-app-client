@@ -4,7 +4,7 @@ import Record from './Record'
 const Standings = ({ teams }) => {
   // Sort on ranking
   teams.sort((a, b) => (parseInt(a.rank) > parseInt(b.rank)) ? 1 : -1);
-
+  // Testing ssh
   return (
     <table cellPadding="6">
       <thead>
