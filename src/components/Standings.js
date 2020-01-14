@@ -3,8 +3,8 @@ import Record from './Record'
 
 const Standings = ({ teams }) => {
   // Sort on ranking
-  teams.sort((a, b) => (parseInt(a.rank) > parseInt(b.rank)) ? 1 : -1);
-  // Testing ssh
+  teams.sort((a, b) => (parseInt(a.confRank) > parseInt(b.confRank)) ? 1 : -1);
+  
   return (
     <table cellPadding="6">
       <thead>
