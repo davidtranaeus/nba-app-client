@@ -14,7 +14,8 @@ const getConferenceRecords = (teams, filter) => {
 }
 
 const mapStateToProps = state => ({
-  teams: getConferenceRecords(state.teams, state.visibilityFilter)
+  isFetching: state.teams.isFetching,
+  teams: getConferenceRecords(state.teams.items, state.visibilityFilter)
 })
 
 export default connect(

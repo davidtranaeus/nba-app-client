@@ -2,8 +2,8 @@ import fetch from 'cross-fetch'
 
 // Actions
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER'
-export const REQUEST_DATA = 'REQUEST_DATA'
-export const RECEIVE_DATA = 'RECEIVE_DATA'
+export const REQUEST_TEAMS = 'REQUEST_TEAMS'
+export const RECEIVE_TEAMS = 'RECEIVE_TEAMS'
 
 // Constants
 export const VisibilityFilters = {
@@ -16,26 +16,28 @@ export function setVisibilityFilter(filter) {
   return { type: SET_VISIBILITY_FILTER, filter }
 }
 
-export function requestData() {
-  return { type: REQUEST_DATA }
+export function requestTeams() {
+  return { type: REQUEST_TEAMS }
 }
 
-export function receiveData(data) {
-  return { type: RECEIVE_DATA, data }
+export function receiveTeams(data) {
+  return { type: RECEIVE_TEAMS, data }
 }
 
 // Async calls
-export function fetchData() {
+export function fetchTeams() {
   return dispatch => {
     
-    dispatch(requestData()) // TODO: This is currently not doing anything
+    dispatch(requestTeams()) // TODO: This is currently not doing anything
 
     const url = (process.env.NODE_ENV === 'development') 
       ? 'http://localhost:3001/teams'
       : 'http://ec2-13-53-135-10.eu-north-1.compute.amazonaws.com/teams';
 
-    return fetch(url)
-      .then(response => response.json())
-      .then(data => dispatch(receiveData(data)))
+    setTimeout(() => {
+      return fetch(url)
+        .then(response => response.json())
+        .then(data => dispatch(receiveTeams(data)))
+    }, 2000)
   }
 }

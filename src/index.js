@@ -7,7 +7,7 @@ import thunkMiddleware from 'redux-thunk'
 import './index.css';
 import App from './components/App';
 import combinedReducer from './reducers';
-import { fetchData } from './actions.js';
+import { fetchTeams } from './actions.js';
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(
@@ -15,7 +15,7 @@ const store = createStore(
   applyMiddleware(thunkMiddleware)
 );
 
-store.dispatch(fetchData())
+store.dispatch(fetchTeams())
 
 ReactDOM.render(
   <Provider store={store}>

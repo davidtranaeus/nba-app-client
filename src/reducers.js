@@ -1,4 +1,4 @@
-import { SET_VISIBILITY_FILTER, VisibilityFilters, RECEIVE_DATA } from './actions'
+import { SET_VISIBILITY_FILTER, VisibilityFilters, RECEIVE_TEAMS, REQUEST_TEAMS } from './actions'
 import { combineReducers } from 'redux';
 
 const { SHOW_WEST } = VisibilityFilters
@@ -12,10 +12,18 @@ function visibilityFilter(state = SHOW_WEST, action) {
   }
 }
 
-function teams(state = [], action) {
+function teams(state = { isFetching: false, items: []}, action) {
   switch (action.type) {
-    case RECEIVE_DATA:
-      return action.data
+    case REQUEST_TEAMS:
+      return {
+        isFetching: true,
+        items: []
+      }
+    case RECEIVE_TEAMS:
+      return {
+        isFetching: false,
+        items: action.data
+      }
     default:
       return state
   }
