@@ -34,10 +34,8 @@ export function fetchTeams() {
       ? 'http://localhost:3001/teams'
       : 'http://ec2-13-53-135-10.eu-north-1.compute.amazonaws.com/teams';
 
-    setTimeout(() => {
-      return fetch(url)
-        .then(response => response.json())
-        .then(data => dispatch(receiveTeams(data)))
-    }, 2000)
+    return fetch(url)
+      .then(response => response.json())
+      .then(data => dispatch(receiveTeams(data)))
   }
 }
