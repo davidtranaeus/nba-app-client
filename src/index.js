@@ -7,7 +7,7 @@ import thunkMiddleware from 'redux-thunk'
 import './index.css';
 import App from './components/App';
 import combinedReducer from './reducers';
-import { fetchTeams } from './actions.js';
+import { fetchTeams, fetchGames } from './actions.js';
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(
@@ -16,6 +16,7 @@ const store = createStore(
 );
 
 store.dispatch(fetchTeams())
+store.dispatch(fetchGames())
 
 ReactDOM.render(
   <Provider store={store}>
