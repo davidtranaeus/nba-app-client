@@ -1,5 +1,5 @@
 import React from 'react';
-import { VisibilityFilters } from '../actions'
+import { VisibilityFilters } from '../../actions'
 
 const { SHOW_WEST, SHOW_EAST } = VisibilityFilters
 

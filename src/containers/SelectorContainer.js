@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import ReactGA from 'react-ga';
-import Selector from '../components/Selector'
+import Selector from '../components/Standings/Selector'
 import { setVisibilityFilter } from '../actions'
 
 const mapStateToProps = state => ({

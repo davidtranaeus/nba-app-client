@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Standings from '../components/Standings'
+import Standings from '../components/Standings/Standings'
 import { VisibilityFilters, toggleTeam } from '../actions'
 
 const getConferenceRecords = (teams, filter) => {

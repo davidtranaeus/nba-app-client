@@ -1,20 +1,30 @@
-table {
-  margin: 0 auto;
-  border-collapse: collapse;
-}
-
-.selector-container {
+.app {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.standings {
+  background-color: burlywood;
+  width: 500px;
+}
+
+.schedule {
+  background-color: lavender;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  margin: 40px auto;
+  width: 480px;
 }
 
-.selected {
-  border-bottom: 1px solid;
+.gamebox {
+  background-color: royalblue;
+  width: 100px;
 }
 
-.unselected {
-  color: gray;
+table {
+  border-collapse: collapse;
+  margin: auto;
 }
 
 tbody tr:hover {
@@ -25,9 +35,16 @@ tbody tr:hover {
   text-align: center;
 }
 
-@media(min-width: 640px) {
-  .selector-container {
-    width: 500px;
-    margin: 20px auto;
-  }
+.selector-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.selected {
+  border-bottom: 1px solid;
+}
+
+.unselected {
+  color: gray;
 }
