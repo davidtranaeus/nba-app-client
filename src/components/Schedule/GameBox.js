@@ -8,8 +8,13 @@ const GameBox = ({ game, hTeam, vTeam }) => {
         <img src={vTeam.logo} alt={vTeam.tricode} width="30px"/>
       </div>
       <div>{game.hTeam.score} - {game.vTeam.score}</div>
+      <div className="date">{parseUTCDate(game.startTimeUTC)}</div>
     </li>
   )
+}
+
+const parseUTCDate = date => {
+  return date.substr(5,5).split("-").reverse().join('/')
 }
 
 export default GameBox;
