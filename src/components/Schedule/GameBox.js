@@ -2,7 +2,7 @@ import React from 'react';
 
 const GameBox = ({ game, hTeam, vTeam }) => {
   return (
-    <li className="gamebox"> 
+    <li className="gamebox hover"> 
       <div>
         <img src={hTeam.logo} alt={hTeam.tricode} width="30px"/>
         <img src={vTeam.logo} alt={vTeam.tricode} width="30px"/>

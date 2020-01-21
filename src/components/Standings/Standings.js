@@ -7,8 +7,8 @@ const Standings = ({ isFetching, teams, toggleTeam }) => {
   teams.sort((a, b) => (parseInt(a.confRank) > parseInt(b.confRank)) ? 1 : -1);
 
   return isFetching
-    ? <div className="loader">Loading</div>
-    : (<table cellPadding="6">
+    ? <div>Loading</div>
+    : (<table className="no-border" cellPadding="6">
         <thead>
           <tr>
             {/* <th>{window.innerWidth > 640 ? "Ranking" : ""}</th> */}

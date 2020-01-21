@@ -2,7 +2,7 @@ import React from 'react';
 
 const Record = ({ data, toggleTeam }) => {
   return (    
-    <tr onClick={() => toggleTeam(data.teamId)}>
+    <tr className="hover" onClick={() => toggleTeam(data.teamId)}>
       <td>{data.confRank}</td>
       <td><img src={data.logo} alt={data.nickname} width="30px"/></td>
       <td>{window.innerWidth > 640 ? data.nickname : data.tricode}</td>

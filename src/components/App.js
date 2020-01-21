@@ -10,11 +10,11 @@ ReactGA.pageview(window.location.pathname + window.location.search);
 
 const App = () => (
   <div className="app">
-    <div className="standings">
+    <div className="standings-container">
       <SelectorContainer />
       <StandingsContainer />
     </div>
-    <ul className="schedule">
+    <ul className="schedule-container">
       <ScheduleContainer />
     </ul>
   </div>
