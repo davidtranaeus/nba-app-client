@@ -10,11 +10,13 @@ const GameBox = ({ game, hTeam, vTeam }) => {
         <img src={hTeam.logo} alt={hTeam.tricode} width="30px"/>
         <img src={vTeam.logo} alt={vTeam.tricode} width="30px"/>
       </div>
-      <div>
-        <span className={`${hWon ? "bold" : ""}`}>{game.hTeam.score} </span>
-        -
-        <span className={`${!hWon ? "bold" : ""}`}> {game.vTeam.score}</span>
-      </div>
+      {game.statusNum === 3 &&
+        <div>
+          <span className={`${hWon ? "bold" : ""}`}>{game.hTeam.score} </span>
+          -
+          <span className={`${!hWon ? "bold" : ""}`}> {game.vTeam.score}</span>
+        </div>
+      }
       <div className="date">{parseUTCDate(game.startTimeUTC)}</div>
     </li>
   )
