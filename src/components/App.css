@@ -2,24 +2,37 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 20px
 }
 
 .standings {
-  background-color: burlywood;
+  /* background-color: aliceblue; */
   width: 500px;
 }
 
 .schedule {
-  background-color: lavender;
+  /* background-color: lavender; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 480px;
+  width: 500px;
+  margin: 0;
+  padding: 0;
 }
 
 .gamebox {
-  background-color: royalblue;
-  width: 100px;
+  /* background-color: cornflowerblue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90px;
+  padding: 10px 0px;
+  margin-bottom: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d3d3d3;
+  border-radius: 2px;
+  list-style: none;
 }
 
 table {

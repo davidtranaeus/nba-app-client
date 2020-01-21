@@ -14,9 +14,9 @@ const App = () => (
       <SelectorContainer />
       <StandingsContainer />
     </div>
-    <div className="schedule">
+    <ul className="schedule">
       <ScheduleContainer />
-    </div>
+    </ul>
   </div>
 )
 export default App

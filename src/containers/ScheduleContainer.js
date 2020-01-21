@@ -6,7 +6,8 @@ const getToggledSchedule = (games, teamId) => {
 }
 
 const mapStateToProps = state => ({
-  games: getToggledSchedule(state.games.items, state.schedule.teamId)
+  games: getToggledSchedule(state.games.items, state.schedule.teamId),
+  teams: state.teams.items,
 })
 
 export default connect(
