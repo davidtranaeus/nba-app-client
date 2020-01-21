@@ -15,17 +15,20 @@ function visibilityFilter(state = SHOW_WEST, action) {
   }
 }
 
-function teams(state = { isFetching: false, items: [] }, action) {
+function teams(state = { isFetching: false, items: {} }, action) {
   switch (action.type) {
     case REQUEST_TEAMS:
       return {
         isFetching: true,
-        items: []
+        items: {}
       }
     case RECEIVE_TEAMS:
       return {
         isFetching: false,
-        items: action.data
+        items: action.data.reduce((obj, team) => {
+          obj[team.teamId] = team
+          return obj
+        }, {})
       }
     default:
       return state
