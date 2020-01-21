@@ -8,12 +8,12 @@ const Selector = ({ onClick, conference }) => {
     <div className="selector-container">
       <div
         onClick={() => onClick(SHOW_WEST)}
-        className={`${conference === SHOW_WEST ? "selected" : "unselected"}`}
+        className={`${conference === SHOW_WEST ? "underlined" : "faded"}`}
         >Western conference
       </div>
       <div 
         onClick={() => onClick(SHOW_EAST)}
-        className={`${conference === SHOW_EAST ? "selected" : "unselected"}`}
+        className={`${conference === SHOW_EAST ? "underlined" : "faded"}`}
         >Eastern conference
       </div>
     </div>

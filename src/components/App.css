@@ -6,7 +6,6 @@
 }
 
 .standings-container {
-  /* background-color: aliceblue; */
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -14,7 +13,6 @@
 }
 
 .schedule-container {
-  /* background-color: lavender; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -24,7 +22,6 @@
 }
 
 .gamebox {
-  /* background-color: cornflowerblue; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,11 +56,11 @@
   margin-bottom: 20px;
 }
 
-.selected {
+.underlined {
   border-bottom: 1px solid;
 }
 
-.unselected {
+.faded {
   color: gray;
 }
 
