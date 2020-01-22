@@ -2,7 +2,7 @@ import React from 'react';
 
 const Record = ({ data, selectTeam, isSelected }) => {
   return (    
-    <tr className={`${isSelected ? 'faded' : ''} hover`} onClick={() => selectTeam(data.teamId)}>
+    <tr className={`${isSelected ? 'highlight' : ''} hover`} onClick={() => selectTeam(data.teamId)}>
       <td>{data.confRank}</td>
       <td><img src={data.logo} alt={data.nickname} width="30px"/></td>
       <td>{window.innerWidth > 640 ? data.nickname : data.tricode}</td>
