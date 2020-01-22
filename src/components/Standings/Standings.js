@@ -11,8 +11,7 @@ const Standings = ({ isFetching, teams, toggleTeam }) => {
     : (<table className="no-border" cellPadding="6">
         <thead>
           <tr>
-            {/* <th>{window.innerWidth > 640 ? "Ranking" : ""}</th> */}
-            <th>{"Ranking"}</th>
+            <th>{window.innerWidth > 640 ? "Ranking" : ""}</th>
             <th></th>
             <th></th>
             <th>W</th>
