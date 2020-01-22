@@ -1,7 +1,7 @@
 import React from 'react';
 import Record from './Record'
 
-const Standings = ({ isFetching, teams, toggleTeam }) => {
+const Standings = ({ isFetching, teams, selectTeam, selectedTeams }) => {
 
   // Sort on ranking
   teams.sort((a, b) => (parseInt(a.confRank) > parseInt(b.confRank)) ? 1 : -1);
@@ -25,9 +25,10 @@ const Standings = ({ isFetching, teams, toggleTeam }) => {
         <tbody>
           {teams.map((record, index) => 
             <Record 
+              key={index}
               data={record} 
-              key={index} 
-              toggleTeam={toggleTeam}
+              selectTeam={selectTeam}
+              isSelected={selectedTeams.includes(record.teamId)}
             />)}
         </tbody>
       </table>

@@ -6,7 +6,7 @@ export const REQUEST_TEAMS = 'REQUEST_TEAMS'
 export const RECEIVE_TEAMS = 'RECEIVE_TEAMS'
 export const REQUEST_GAMES = 'REQUEST_GAMES'
 export const RECEIVE_GAMES = 'RECEIVE_GAMES'
-export const TOGGLE_TEAM = 'TOGGLE_TEAM'
+export const SELECT_SCHEDULE = 'SELECT_SCHEDULE'
 
 // Constants
 export const VisibilityFilters = {
@@ -35,8 +35,8 @@ export function receiveGames(data) {
   return { type: RECEIVE_GAMES, data }
 }
 
-export function toggleTeam(teamId) {
-  return { type: TOGGLE_TEAM, teamId }
+export function selectSchedule(teamId) {
+  return { type: SELECT_SCHEDULE, teamId }
 }
 
 // Async calls

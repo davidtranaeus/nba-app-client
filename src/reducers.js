@@ -1,7 +1,7 @@
 import { SET_VISIBILITY_FILTER, VisibilityFilters,
   RECEIVE_TEAMS, REQUEST_TEAMS,
   RECEIVE_GAMES, REQUEST_GAMES,
-  TOGGLE_TEAM } from './actions'
+  SELECT_SCHEDULE } from './actions'
 import { combineReducers } from 'redux';
 
 const { SHOW_WEST } = VisibilityFilters
@@ -52,13 +52,13 @@ function games(state = { isFetching: false, items: [] }, action) {
   }
 }
 
-function schedule(state = { teamId: [] }, action) {
+function schedule(state = { teamIds: [] }, action) {
   switch (action.type) {
-    case TOGGLE_TEAM:
+    case SELECT_SCHEDULE:
       return {
-        teamId: state.teamId.includes(action.teamId)
-        ? state.teamId.filter(id => id !== action.teamId)
-        : [...state.teamId, action.teamId]
+        teamIds: state.teamIds.includes(action.teamId)
+        ? state.teamIds.filter(id => id !== action.teamId)
+        : [...state.teamIds, action.teamId]
       }
     default:
       return state

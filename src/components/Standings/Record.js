@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Record = ({ data, toggleTeam }) => {
+const Record = ({ data, selectTeam, isSelected }) => {
   return (    
-    <tr className="hover" onClick={() => toggleTeam(data.teamId)}>
+    <tr className={`${isSelected ? 'faded' : ''} hover`} onClick={() => selectTeam(data.teamId)}>
       <td>{data.confRank}</td>
       <td><img src={data.logo} alt={data.nickname} width="30px"/></td>
       <td>{window.innerWidth > 640 ? data.nickname : data.tricode}</td>

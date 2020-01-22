@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Standings from '../components/Standings/Standings'
-import { VisibilityFilters, toggleTeam } from '../actions'
+import { VisibilityFilters, selectSchedule } from '../actions'
 
 const getConferenceRecords = (teams, filter) => {
   switch (filter) {
@@ -15,13 +15,12 @@ const getConferenceRecords = (teams, filter) => {
 
 const mapStateToProps = state => ({
   isFetching: state.teams.isFetching,
-  teams: getConferenceRecords(state.teams.items, state.visibilityFilter)
+  teams: getConferenceRecords(state.teams.items, state.visibilityFilter),
+  selectedTeams: state.schedule.teamIds,
 })
 
 const mapDispatchToProps = dispatch => ({
-  toggleTeam: teamId => {
-    dispatch(toggleTeam(teamId))
-  }
+  selectTeam: teamId => dispatch(selectSchedule(teamId))
 })
 
 export default connect(
