@@ -2,7 +2,13 @@ import { connect } from 'react-redux'
 import Schedule from '../components/Schedule/Schedule'
 
 const getToggledSchedule = (games, teamId) => {
-  return games.filter(game => game.hTeam.teamId === teamId || game.vTeam.teamId === teamId)
+  if (teamId.length === 0) return []
+
+  return games.filter(game => {
+    return teamId.every(id => {
+      return id === game.hTeam.teamId || id === game.vTeam.teamId
+    })
+  })
 }
 
 const mapStateToProps = state => ({

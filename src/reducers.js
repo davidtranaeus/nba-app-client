@@ -52,11 +52,13 @@ function games(state = { isFetching: false, items: [] }, action) {
   }
 }
 
-function schedule(state = { teamId: 0 }, action) {
+function schedule(state = { teamId: [] }, action) {
   switch (action.type) {
     case TOGGLE_TEAM:
       return {
-        teamId: action.teamId
+        teamId: state.teamId.includes(action.teamId)
+        ? state.teamId.filter(id => id !== action.teamId)
+        : [...state.teamId, action.teamId]
       }
     default:
       return state
